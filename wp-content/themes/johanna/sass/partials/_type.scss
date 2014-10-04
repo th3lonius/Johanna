@@ -1,0 +1,115 @@
+/* =HIERARCHY */
+$h1: 7.3302rem;
+$h2: 4.7123rem;
+$h3: 4.5304rem;
+$h4: 2.9124rem;
+$h5: 2.8rem;
+$base: 1.8rem;
+$mobile-base: 1.7305rem;
+
+%headings {
+	display: block;
+    font-family: $title-font-alt;
+    font-weight: 700;
+}
+
+h1, h2, h3, h4, h5 {
+	@extend %headings;
+}
+
+h1 {
+	font-size: $h1;
+	font-weight: 900;
+}
+
+header h2 {
+	@include transition(top, 0.3s, ease-in-out, 0.1s);
+    background: $green;
+    color: $white;
+	font-size: $h3;
+    left: 0;
+    line-height: 1;
+    padding: 10px 20px;
+    position: fixed;
+	text-align: center;
+    top: 80px;
+    text-transform: uppercase;
+	width: auto;
+    z-index: 999;
+	&.lineup {
+		padding-left: 60px;
+		&::before {
+			content: "";
+			background: url(img/lineup_icon.svg);
+			position: absolute;
+			top: 12px; left: 10px;
+			width: 40px; height: 40px;
+		}
+	}
+	&.festinfo {
+		padding-left: 60px;
+		&::before {
+			content: "";
+			background: url(img/festinfo_icon.svg);
+			position: absolute;
+			top: 12px; left: 10px;
+			width: 40px; height: 40px;
+		}
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		right: -50px;
+		top: 0;
+		border-width: 24px 24px;
+		border-style: solid;
+		border-color: $green transparent $green $green;
+		z-index: 99;
+	}
+}
+
+h2 {
+    font-size: $h2;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: $h3;
+}
+
+h4 {
+    font-size: $h4;
+}
+
+h5 {
+    font-size: $h5;
+    font-weight: 400;
+}
+
+p {
+    font-size: $base;
+	font-weight: 500;
+	margin-bottom: $base;
+	@include respond-to(mobile) {
+		font-size: $mobile-base;
+	}
+}
+
+p a {
+    color: hsl(149, 69%, 41%)!important;
+    font-weight: 700;
+	&:hover{
+		color: hsl(149, 69%, 34%);
+	}
+}
+
+strong { font-weight: 600; }
+
+/* =LINKS
+----------------------------------------------- */
+
+a:link, a:visited {
+    text-decoration: none;
+}

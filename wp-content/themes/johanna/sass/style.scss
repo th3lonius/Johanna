@@ -1,0 +1,115 @@
+/*
+Theme Name: Gravel
+Theme URI: http://greengravelfest.com
+Description: A custom Wordpress portfolio site for the Green Gravel Comedy Fest
+Author: Matthew Mesaros
+Version: 1.0
+
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@import 'partials/reset';
+@import 'partials/variables';
+@import 'partials/base';
+@import 'partials/mixins';
+@import 'partials/media_queries';
+@import 'partials/type';
+@import 'partials/navigation';
+@import 'partials/superslides';
+@import 'partials/animations';
+
+figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*HEADER*/
+.masthead {
+	width: 50%; height: auto;
+}
+
+
+/* =GLOBALS
+----------------------------------------------- */
+main {
+    margin: 0 auto;
+	margin-top: 10rem;
+    position: relative;
+	text-align: center;
+    z-index: 1;
+}
+
+article {
+	@extend %clearfix;
+	margin: 0 auto;
+    position: relative;
+    text-align: left;
+	aside, & > section {
+		@include respond-to(mobile) {
+			width: 100%!important;
+		}
+	}
+	&.padded {
+		max-width: 70em;
+		padding: 0 $h5;
+	}
+}
+
+#wrapper {
+	@include transition(all, 0.25s, ease-in-out);
+	height: 100%;
+    position: relative;
+    z-index: 10;
+    top: 0; bottom: 0;
+    right: 0;
+}
+
+footer {
+	margin-top: 200px;
+	position: fixed; bottom: 0; left: 0; right: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+
+/* =HEADER
+----------------------------------------------- */
+.global-header {
+	top: 0; left: 0;
+	width: 100%; height: 60px;
+	z-index: 9999;
+}
+
+.logo {
+	background-image: url(img/branding.svg);
+	background-position: 1px center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	opacity: 0.9;
+	position: absolute;
+	top: 10px; left: 50px;
+	width: 100px; height: 300px;
+}
+
+.branding {
+    margin: 0 auto;
+    padding: 0 10px 20px;
+    width: 90%;
+}
+
+.branding p {
+    color: #FFF;
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+.branding img {
+    height: 100%;
+    width: 100%;
+}
+
+header article strong {
+    font-weight: 900;
+}
