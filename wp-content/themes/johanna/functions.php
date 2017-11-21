@@ -23,9 +23,6 @@ register_nav_menus(
 
 
 add_action( 'init', 'festinfo_post_type' );
-add_action( 'init', 'lineup_post_type' );
-add_action( 'init', 'schedule_post_type' );
-add_action( 'init', 'venues_post_type' );
 
 function festinfo_post_type() {
 
@@ -44,57 +41,6 @@ function festinfo_post_type() {
 	) );
 }
 
-function venues_post_type() {
-
-	register_post_type( 'venues', array(
-		'labels' => array(
-			'name' => __('Venues'),
-			'singular_name' => __('Venue')
-			),
-		'public' => true,
-		'show_ui' => true,
-		'rewrite' => array(
-			'slug' => 'venues',
-			'with_front' => false
-			),
-		'has_archive' => true
-	) );
-}
-
-function lineup_post_type() {
-
-	register_post_type( 'lineup', array(
-		'labels' => array(
-			'name' => __('Lineup'),
-			'singular_name' => __('Performer')
-			),
-		'public' => true,
-		'show_ui' => true,
-		'rewrite' => array(
-			'slug' => 'lineup',
-			'with_front' => false
-			),
-		'has_archive' => true
-	) );
-}
-
-function schedule_post_type() {
-
-	register_post_type( 'schedule', array(
-		'labels' => array(
-			'name' => __('Schedule'),
-			'singular_name' => __('Event')
-			),
-		'public' => true,
-		'show_ui' => true,
-		'rewrite' => array(
-			'slug' => 'schedule',
-			'with_front' => false
-			),
-		'has_archive' => true
-	) );
-}
-
 /* Plugin Name: jQuery to the footer! */
 add_action( 'wp_enqueue_scripts', 'wcmScriptToFooter', 9999 );
 function wcmScriptToFooter()
@@ -107,14 +53,10 @@ function theme_js() {
     wp_register_script( 'main', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '', true );
     wp_register_script( 'superslides', get_template_directory_uri() . '/js/superslides.js', array('jquery'), '', true );
     wp_register_script( 'mixitup', get_template_directory_uri() . '/js/mixitup_min.js', array('jquery'), '', true );
-    wp_register_script( 'colorthief', get_template_directory_uri() . '/js/colorthief.js', array('jquery'), '', true );
-    wp_register_script( 'quantize', get_template_directory_uri() . '/js/quantize.js', array('jquery'), '', true );
     wp_register_script( 'skrollr', get_template_directory_uri() . '/js/skrollr.js', array('jquery'), '', true );
     wp_enqueue_script( 'main' );
     wp_enqueue_script( 'superslides' );
     wp_enqueue_script( 'mixitup' );
-    wp_enqueue_script( 'colorthief' );
-    wp_enqueue_script( 'quantize' );
     wp_enqueue_script( 'skrollr' );
 }
 
